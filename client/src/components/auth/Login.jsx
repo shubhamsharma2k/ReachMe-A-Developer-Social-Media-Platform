@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState, useSelector } from "react";
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +18,9 @@ const Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
-    console.log("success");
   };
+
+  //REDIRECT IF LOGGED IN
 
   return (
     <Fragment>

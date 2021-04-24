@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState, useSelector } from "react";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { setAlert } from "../../actions/alertAction";
 
-const Register = () => {
+const Register = ({ setAlert }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,9 +23,8 @@ const Register = () => {
     e.preventDefault();
 
     if (password !== password2) {
-      console.log("Passwords doesnt match");
+      setAlert("Passwords doesnt match", "danger");
     } else {
-      console.log("success");
     }
   };
 
@@ -40,7 +40,6 @@ const Register = () => {
             type="text"
             placeholder="Name"
             name="name"
-            required
             value={name}
             onChange={(e) => onChange(e)}
           />
@@ -52,7 +51,6 @@ const Register = () => {
             name="email"
             value={email}
             onChange={(e) => onChange(e)}
-            required
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
@@ -64,7 +62,6 @@ const Register = () => {
             type="password"
             placeholder="Password"
             name="password"
-            minLength="6"
             value={password}
             onChange={(e) => onChange(e)}
           />
@@ -74,7 +71,6 @@ const Register = () => {
             type="password"
             placeholder="Confirm Password"
             name="password2"
-            minLength="6"
             value={password2}
             onChange={(e) => onChange(e)}
           />
@@ -88,4 +84,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default connect(null, { setAlert })(Register);
