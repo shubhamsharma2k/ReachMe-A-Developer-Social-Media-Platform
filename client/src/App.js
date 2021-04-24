@@ -6,12 +6,21 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Alert from "./components/layout/Alert";
-
+import { loadUser } from "./actions/authAction";
+import setAuthToken from "./utils/setAuthToken";
 //Redux
 import store from "./store";
 import { Provider } from "react-redux";
 
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
+
 const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+
   return (
     <Provider store={store}>
       <Router>
