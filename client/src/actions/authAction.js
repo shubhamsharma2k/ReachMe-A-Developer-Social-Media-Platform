@@ -9,6 +9,7 @@ import {
   AUTH_ERROR,
   USER_LOADED,
   LOGOUT,
+  CLEAR_PROFILE,
 } from "./types";
 
 //REGISTER USER
@@ -93,6 +94,9 @@ export const login = ({ email, password }) => async (dispatch) => {
 
 //LOGOUT
 export const logout = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
   dispatch({
     type: LOGOUT,
   });
