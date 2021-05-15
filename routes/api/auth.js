@@ -7,7 +7,7 @@ const config = require("config");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-//@route api/auth
+//@route /api/auth
 //@desc  Get User by Token
 router.get("/", auth, async (req, res) => {
   try {
@@ -19,7 +19,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-//@route api/auth
+//@route /api/auth
 //@desc  Login user and get token
 router.post(
   "/",

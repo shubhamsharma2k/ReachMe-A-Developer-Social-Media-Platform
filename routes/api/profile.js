@@ -6,12 +6,13 @@ const User = require("../../models/User");
 const { check, validationResult } = require("express-validator");
 const request = require("request");
 const config = require("config");
+const Post = require("../../models/Post");
 
 //@route    GET api/profile/me
 //@desc     PRIVATE Get current users profile
 router.get("/me", auth, async (req, res) => {
   try {
-    const profile = await await Profile.findOne({
+    const profile = await Profile.findOne({
       user: req.user.id,
     }).populate("user", ["name", "avatar"]);
 
@@ -149,10 +150,13 @@ router.get("/user/:user_id", async (req, res) => {
 });
 
 //@route    DELETE api/profile
-//@desc     PRIVATE delete profile and user
+//@desc     PRIVATE delete profile and user and post
 
 router.delete("/", auth, async (req, res) => {
   try {
+    //REMOVE POSTS
+    await Post.deleteMany({ user: req.user.id });
+
     //REMOVE PROFILE
     await Profile.findOneAndRemove({ user: req.user.id });
 
@@ -185,15 +189,8 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      title,
-      company,
-      location,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { title, company, location, from, to, current, description } =
+      req.body;
 
     const newExp = {
       title,
@@ -263,15 +260,8 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      school,
-      degree,
-      fieldofstudy,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { school, degree, fieldofstudy, from, to, current, description } =
+      req.body;
 
     const newEdu = {
       school,
