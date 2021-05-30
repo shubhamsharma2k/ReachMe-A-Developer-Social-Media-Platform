@@ -30,7 +30,6 @@ router.post(
       const post = await newPost.save();
       res.json(post);
     } catch (error) {
-      console.log(error);
       res.status(400).send("Server Error");
     }
 

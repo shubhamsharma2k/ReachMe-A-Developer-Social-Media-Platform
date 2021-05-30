@@ -17,13 +17,17 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #f4f4f4;
   color: #333;
 }
 
 a {
-  color: var(--primary-color);
+  color: #000000;
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
 }
 
 ul {
@@ -207,6 +211,11 @@ img {
 
 .btn:hover {
   opacity: 0.8;
+  color: #fff;
+}
+
+.btn-light:hover {
+  color: var(--dark-color);
 }
 
 .bg-light,
@@ -222,16 +231,6 @@ img {
   height: 1px;
   background: #ccc;
   margin: 1.5rem 0;
-}
-
-/* Overlay */
-.dark-overlay {
-  background-color: #452c63;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 /* Forms */
@@ -299,54 +298,68 @@ button {
 }
 
 /* Navbar */
-.navbar {
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
+  padding: 10px 10%;
 }
 
-.navbar ul {
-  display: flex;
+.nav {
+  background-color: #fff;
+  opacity: 0.8;
 }
 
-.navbar a {
-  color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
+.nav h1 a:hover {
+  color: #ccc;
 }
 
-.navbar a:hover {
-  color: var(--primary-color);
+.nav_links {
+  list-style: none;
 }
 
-.navbar .welcome span {
-  margin-right: 0.6rem;
+.nav_links li {
+  display: inline-block;
+  margin: 0px 20px;
 }
 
-/* Landing Page */
+.nav_links li a {
+  padding: 5px 10px;
+  color: #000000;
+}
+
+.nav_links li a:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border-radius: 20px;
+}
+
+/* Landing */
 .landing {
   position: relative;
-  /* background: url("./img/showcase.jpg") no-repeat center center/cover; */
+  width: 100%;
   height: 100vh;
 }
 
-.landing-inner {
-  color: #fff;
+.image_img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.image_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  width: 80%;
-  margin: auto;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 /* Profiles Page */
