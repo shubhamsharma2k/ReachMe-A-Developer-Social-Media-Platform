@@ -33,55 +33,61 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <div className="signUp autho_container">
-        <div className="signUp-item1">
-          <h1 className="large text-primary my-1">Sign Up</h1>
-          <p className="lead">
-            <i className="fas fa-user" /> Create Your Account
-          </p>
-          <form className="form" onSubmit={(e) => onSubmit(e)}>
-            <div className="form-group">
-              <input
-                type="text"
-                placeholder="Name"
-                name="name"
-                value={name}
-                onChange={(e) => onChange(e)}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                placeholder="Email Address"
-                name="email"
-                value={email}
-                onChange={(e) => onChange(e)}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={(e) => onChange(e)}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                name="password2"
-                value={password2}
-                onChange={(e) => onChange(e)}
-              />
-            </div>
-            <input type="submit" className="btn btn-primary" value="Register" />
-          </form>
-          <p className="my-1">
-            Already have an account? <Link to="/login">Sign In</Link>
-          </p>
-        </div>
+      <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
+        <h1 className="text-primary fw-bold">Sign Up</h1>
+        <p className="lead">
+          <i className="fas fa-user" /> Create Your Account
+        </p>
+        <form className="form" onSubmit={(e) => onSubmit(e)}>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={name}
+              className="form-control my-2"
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="email"
+              value={email}
+              className="form-control my-2"
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              className="form-control my-2"
+              value={password}
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              name="password2"
+              className="form-control my-2"
+              value={password2}
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+          <input
+            type="submit"
+            className="btn btn-primary my-2"
+            value="Register"
+          />
+        </form>
+        <p className="my-1">
+          Already have an account? <Link to="/login">Sign In</Link>
+        </p>
       </div>
     </Fragment>
   );

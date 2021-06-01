@@ -13,13 +13,15 @@ const Landing = ({ isAuthenticated }) => {
       <img className="image_img" src={img2} alt="imgg" />
       <div className="image_overlay">
         <div className="image_title">
-          <h1 className="large">A Social Media Platform for Developers.</h1>
+          <h1 className="large fw-bold">
+            A Social Media Platform for Developers.
+          </h1>
         </div>
         <div className="buttons">
-          <Link to="/register" className="btn btn-primary">
+          <Link to="/register" className="btn btn-primary mx-2">
             Sign Up
           </Link>
-          <Link to="/login" className="btn btn-light">
+          <Link to="/login" className="btn btn-light mx-2">
             Login
           </Link>
         </div>
