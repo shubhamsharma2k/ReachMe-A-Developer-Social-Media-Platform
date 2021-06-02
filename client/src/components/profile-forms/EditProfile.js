@@ -73,7 +73,7 @@ const EditProfile = ({
   return (
     <Fragment>
       <div className="mt-3 d-flex justify-content-center flex-column align-items-left">
-        <h1 className="large text-primary">Edit Your Profile</h1>
+        <h1 className="large text-dark">Edit Your Profile</h1>
         <p className="lead">
           <i className="fas fa-user" /> Add some changes to your profile
         </p>
