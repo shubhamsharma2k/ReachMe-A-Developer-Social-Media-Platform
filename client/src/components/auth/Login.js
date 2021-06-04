@@ -26,7 +26,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <div className="mt-3 d-flex justify-content-center flex-column align-items-center signIn_form">
+      <div className="mt-3 d-flex flex-column align-items-center">
         <h1 className="text-primary fw-bold">Sign In</h1>
         <p className="lead">
           <i className="fas fa-user" /> Sign Into Your Account
@@ -41,6 +41,7 @@ const Login = ({ login, isAuthenticated }) => {
               value={email}
               className="form-control my-2"
               onChange={(e) => onChange(e)}
+              style={{ width: "300px" }}
               required
             />
           </div>
@@ -52,6 +53,7 @@ const Login = ({ login, isAuthenticated }) => {
               value={password}
               onChange={(e) => onChange(e)}
               className="form-control my-3"
+              style={{ width: "300px" }}
               minLength="6"
             />
           </div>

@@ -33,7 +33,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
+      <div className="mt-3 d-flex flex-column align-items-center">
         <h1 className="text-primary fw-bold">Sign Up</h1>
         <p className="lead">
           <i className="fas fa-user" /> Create Your Account
@@ -46,6 +46,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               name="name"
               value={name}
               className="form-control my-2"
+              style={{ width: "300px" }}
               onChange={(e) => onChange(e)}
             />
           </div>
@@ -56,6 +57,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               name="email"
               value={email}
               className="form-control my-2"
+              style={{ width: "300px" }}
               onChange={(e) => onChange(e)}
             />
           </div>
@@ -65,6 +67,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               placeholder="Password"
               name="password"
               className="form-control my-2"
+              style={{ width: "300px" }}
               value={password}
               onChange={(e) => onChange(e)}
             />
@@ -75,6 +78,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               placeholder="Confirm Password"
               name="password2"
               className="form-control my-2"
+              style={{ width: "300px" }}
               value={password2}
               onChange={(e) => onChange(e)}
             />
