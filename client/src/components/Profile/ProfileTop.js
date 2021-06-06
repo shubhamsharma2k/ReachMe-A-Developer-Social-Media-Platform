@@ -7,6 +7,7 @@ const ProfileTop = ({
     location,
     website,
     social,
+    githubusername,
     user: { name, avatar },
   },
 }) => {
@@ -95,6 +96,16 @@ const ProfileTop = ({
             className="mx-2"
           >
             <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        )}
+        {githubusername && (
+          <a
+            href={`https://github.com/${githubusername}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-2 link-dark"
+          >
+            <i class="fab fa-github fa-2x"></i>
           </a>
         )}
       </div>
